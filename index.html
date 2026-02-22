@@ -351,6 +351,12 @@
         showStatus('"' + word.toUpperCase() + '" is not in the word list. Try again!', 'error');
         shakeBoxes(); currentInput = ''; buildLetterBoxes(); return;
       }
+      // Check at least one new letter
+      const hasNewLetter = [...word].some(ch => !usedLetters.has(ch) && !blockedLetters.has(ch));
+      if (!hasNewLetter) {
+        showStatus('Word must contain at least one new letter!', 'error');
+        shakeBoxes(); currentInput = ''; buildLetterBoxes(); return;
+      }
       // Accepted!
       wordsPlayed.push(word);
       const newLetters = [];
