@@ -110,7 +110,8 @@
     border: 1px solid var(--border); border-radius: 6px; color: var(--text);
     font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; cursor: pointer;
     display: flex; align-items: center; justify-content: center; transition: all 0.15s;
-    user-select: none; -webkit-tap-highlight-color: transparent; position: relative; }
+    user-select: none; -webkit-tap-highlight-color: transparent; position: relative;
+    touch-action: manipulation; }
   .key:active:not(.key-used):not(.key-blocked) { background: var(--accent); color: #0d0d0f; transform: scale(0.92); }
   .key.key-used { background: var(--used); border-color: var(--used); color: var(--used-text); cursor: default; }
   .key.key-used::after { content: "✓"; position: absolute; font-size: 7px; top: 2px; right: 2px; color: var(--accent); opacity: 0.6; }
@@ -206,7 +207,7 @@
     const KEYBOARD_ROWS = [
       ['q','w','e','r','t','y','u','i','o','p'],
       ['a','s','d','f','g','h','j','k','l'],
-      ['\u232b','z','x','c','v','b','n','m','\u21b5']
+      ['\u232b','z','x','c','v','b','n','m']
     ];
 
     let currentLength = 3;
